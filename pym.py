@@ -1,4 +1,3 @@
-
 # Definimos una clase que nos sirva para guardar y utilizar nuestras
 # funcios
 class tools:
@@ -124,9 +123,9 @@ class tools:
         import pandas as pd
 
         # Creamos la conexion o la base de datos
-        conn = sql.connect('ventas_prueba.db')
+        conn = sql.connect('ventas.db')
         # Subimos el dataframe a la base de datos
-        df.to_sql('ventas_prueba', conn, if_exists='replace', index=False)
+        df.to_sql('ventas', conn, if_exists='replace', index=False)
         # Guardamoscambios y cerramos la conexion
         conn.commit()
         conn.close()
@@ -157,9 +156,9 @@ class tools:
         import pandas as pd
 
         # Creamos la conexion o la base de datos
-        conn = sql.connect('ventas_prueba.db')
+        conn = sql.connect('ventas.db')
         # Subimos el dataframe a la base de datos
-        df.to_sql('ventas_pruebas', conn, if_exists='append', index=False)
+        df.to_sql('ventas', conn, if_exists='append', index=False)
         # Guardamoscambios y cerramos la conexion
         conn.commit()
         conn.close()
@@ -190,7 +189,7 @@ class tools:
         import pandas as pd
 
         # Creamos la conexion o la base de datos
-        conn = sql.connect('ventas_pruebas.db')
+        conn = sql.connect('ventas.db')
         # Hacemos una consulta a la tabla ventas
         consulta = pd.read_sql_query(query, conn)
         # Cerramos la conexion
